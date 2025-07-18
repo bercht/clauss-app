@@ -403,6 +403,7 @@ DEPENDENCIES
   rails-i18n (~> 7.0.0)
   ransack
   rubocop-rails-omakase
+  ruby-vips (~> 2.2, >= 2.2.4)
   selenium-webdriver
   sprockets-rails
   stimulus-rails
@@ -412,7 +413,7 @@ DEPENDENCIES
   web-console
 
 RUBY VERSION
-   ruby 3.3.7p123
+   ruby 3.3.8p144
 
 BUNDLED WITH
    2.6.9
