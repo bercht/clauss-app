@@ -18,7 +18,7 @@ class Property < ApplicationRecord
   validates :area_m2, numericality: { greater_than: 0 }, allow_blank: true
   validates :garage_spaces, numericality: { greater_than_or_equal_to: 0 }, allow_blank: true
   validates :property_type, inclusion: { 
-    in: ['casa', 'apartamento', 'cobertura', 'casa_condominio', 'loft', 'studio', 'kitnet', 'sobrado', 'chacara', 'terreno', 'comercial'] 
+    in: ['casa', 'apartamento', 'casa_de_condominio', 'terreno', 'tereno_em_condominio', 'chacara','comercial'] 
   }, allow_blank: true
   
   validate :featured_limit
@@ -67,15 +67,12 @@ class Property < ApplicationRecord
   
   # Tipos de imóveis disponíveis
   PROPERTY_TYPES = [
-    'Apartamento',
     'Casa',
-    'Cobertura', 
-    'Studio',
-    'Loft',
-    'Sobrado',
-    'Kitnet',
-    'Chácara',
+    'Apartamento',
+    'Casa em Condominio', 
     'Terreno',
+    'Terreno em Condomínio',
+    'Chácara',
     'Comercial'
   ].freeze
   
