@@ -35,7 +35,7 @@
                    data-action="click->spotlight#changeMainImage"
                    aria-label="Ver imagem <%= index + 1 %>">
                   <span class="absolute inset-0 overflow-hidden rounded-md">
-                    <%= image_tag image, alt: @property.title, class: "size-full object-cover" %>
+                    <%= image_tag image.variant(resize_to_limit: [300, 300]), alt: @property.title, class: "size-full object-cover" %>
                   </span>
                   <span class="pointer-events-none absolute inset-0 rounded-md ring-2 ring-transparent ring-offset-2 hover:ring-indigo-500" aria-hidden="true"></span>
                   <% if index == 3 && @property.images.count > 4 %>
@@ -56,8 +56,8 @@
                  data-group="property-gallery"
                  data-title="<%= @property.title %> - Imagem principal"
                  data-spotlight-target="mainImageLink">
-                <%= image_tag @property.images.first, 
-                    alt: @property.title, 
+                <%= image_tag @property.images.first.variant(resize_to_limit: [800, 600]),
+                    alt: @property.title,
                     class: "aspect-square w-full object-cover sm:rounded-lg cursor-pointer main-image",
                     id: "mainImage",
                     data: { spotlight_target: "mainImage" } %>
@@ -188,8 +188,8 @@
             <div class="group relative bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow">
               <div class="aspect-h-3 aspect-w-4 overflow-hidden rounded-t-lg">
                 <% if property.images.any? %>
-                  <%= image_tag property.images.first, 
-                      alt: property.title, 
+                  <%= image_tag property.images.first.variant(resize_to_limit: [400, 300]),
+                      alt: property.title,
                       class: "h-full w-full object-cover object-center group-hover:opacity-75" %>
                 <% else %>
                   <div class="h-full w-full bg-gray-200 flex items-center justify-center">

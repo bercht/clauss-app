@@ -18,7 +18,7 @@ Rails.application.configure do
 
   # Configuração do ActiveStorage
   config.active_storage.service = :amazon
-  config.active_storage.variant_processor = :mini_magick
+  config.active_storage.variant_processor = :vips
   config.active_storage.resolve_model_to_route = :rails_storage_proxy
   
   # Configuração de logs
@@ -32,7 +32,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'https://clauss-app-170118de184f.herokuapp.com/' }
   config.action_controller.default_url_options = { host: 'https://clauss-app-170118de184f.herokuapp.com/' }
   config.active_storage.service = :amazon
-  config.active_storage.variant_processor = :mini_magick
+  config.active_storage.variant_processor = :vips
   config.force_ssl = true
   config.cache_classes = true
   config.eager_load = true
