@@ -44,15 +44,16 @@ class Admin::PropertiesController < Admin::BaseController
 
   def update
     # Separar imagens dos outros parâmetros
-    images = property_params.delete(:images)
+    attrs = property_params
+    images = attrs.delete(:images)
     
     Rails.logger.debug "=== DEBUG UPDATE PROPERTY ==="
-    Rails.logger.debug "Property params (sem imagens): #{property_params.inspect}"
+    Rails.logger.debug "Property params (sem imagens): #{attrs.inspect}"
     Rails.logger.debug "Novas imagens: #{images&.length || 0} arquivos"
 
     
     # Atualizar campos normais (sem imagens)
-    if @property.update(property_params)
+    if @property.update(attrs)
       # Anexar novas imagens (se houver) SEM remover as existentes
       if images.present?
         @property.images.attach(images)
