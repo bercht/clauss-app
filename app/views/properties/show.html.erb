@@ -8,12 +8,12 @@
            data-spotlight-group-value="property-gallery"
            data-spotlight-title-value="<%= @property.title %>">
         
-        <% if @property.images.attached? %>
+        <% if @property.valid_images.any? %>
           <!-- Hidden links for Spotlight.js gallery (for images beyond the 4 thumbnails) -->
-          <% if @property.images.count > 4 %>
+          <% if @property.valid_images.count > 4 %>
             <div class="hidden">
-              <% @property.images.offset(4).each_with_index do |image, index| %>
-                <a href="<%= url_for(image) %>" 
+              <% @property.valid_images.offset(4).each_with_index do |image, index| %>
+                <a href="<%= url_for(image) %>"
                    class="spotlight"
                    data-group="property-gallery"
                    data-title="<%= @property.title %> - Imagem <%= index + 5 %>">
@@ -25,8 +25,8 @@
           <!-- Thumbnails -->
           <div class="mx-auto mt-6 hidden w-full max-w-2xl sm:block lg:max-w-none">
             <div class="grid grid-cols-4 gap-6" aria-orientation="horizontal" role="tablist">
-              <% @property.images.limit(4).each_with_index do |image, index| %>
-                <a href="<%= url_for(image) %>" 
+              <% @property.valid_images.limit(4).each_with_index do |image, index| %>
+                <a href="<%= url_for(image) %>"
                    class="spotlight relative flex h-24 cursor-pointer items-center justify-center rounded-md bg-white text-sm font-medium text-gray-900 uppercase hover:bg-gray-50 focus:ring-3 focus:ring-indigo-500/50 focus:ring-offset-4 focus:outline-hidden image-thumb"
                    data-image-url="<%= url_for(image) %>"
                    data-group="property-gallery"
@@ -38,9 +38,9 @@
                     <%= image_tag image.variant(resize_to_limit: [300, 300]), alt: @property.title, class: "size-full object-cover" %>
                   </span>
                   <span class="pointer-events-none absolute inset-0 rounded-md ring-2 ring-transparent ring-offset-2 hover:ring-indigo-500" aria-hidden="true"></span>
-                  <% if index == 3 && @property.images.count > 4 %>
+                  <% if index == 3 && @property.valid_images.count > 4 %>
                     <div class="absolute inset-0 bg-black bg-opacity-50 rounded-md flex items-center justify-center">
-                      <span class="text-white font-bold text-lg">+<%= @property.images.count - 4 %></span>
+                      <span class="text-white font-bold text-lg">+<%= @property.valid_images.count - 4 %></span>
                     </div>
                   <% end %>
                 </a>
@@ -51,12 +51,12 @@
           <!-- Main image -->
           <div>
             <div class="main-image-container">
-              <a href="<%= url_for(@property.images.first) %>" 
+              <a href="<%= url_for(@property.valid_images.first) %>"
                  class="spotlight"
                  data-group="property-gallery"
                  data-title="<%= @property.title %> - Imagem principal"
                  data-spotlight-target="mainImageLink">
-                <%= image_tag @property.images.first.variant(resize_to_limit: [800, 600]),
+                <%= image_tag @property.valid_images.first.variant(resize_to_limit: [800, 600]),
                     alt: @property.title,
                     class: "aspect-square w-full object-cover sm:rounded-lg cursor-pointer main-image",
                     id: "mainImage",

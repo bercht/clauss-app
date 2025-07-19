@@ -6,6 +6,13 @@ class Property < ApplicationRecord
   
   belongs_to :neighborhood
   has_many_attached :images
+
+  # Retorna apenas imagens cujo arquivo existe no serviço de storage
+  def valid_images
+    images.select do |image|
+      image.blob&.service&.exist?(image.blob.key)
+    end
+  end
   
   validates :title, presence: true
   validates :price, presence: true, numericality: { greater_than: 0 }

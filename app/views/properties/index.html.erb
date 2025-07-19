@@ -82,9 +82,9 @@
         <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
           <!-- Imagem -->
           <div class="relative h-48">
-            <% if property.images.attached? %>
+            <% if property.valid_images.any? %>
               <%= link_to property_path(property) do %>
-                <%= image_tag property.images.first.variant(resize_to_limit: [600, 400]),
+                <%= image_tag property.valid_images.first.variant(resize_to_limit: [600, 400]),
                     alt: property.title,
                     class: "w-full h-full object-cover hover:scale-105 transition-transform duration-300" %>
               <% end %>
