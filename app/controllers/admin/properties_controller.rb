@@ -44,8 +44,8 @@ class Admin::PropertiesController < Admin::BaseController
 
   def update
     # Separar imagens dos outros parâmetros
-    attrs = property_params
-    images = attrs.delete(:images)
+    attrs = property_params.except(:images)
+    images = property_params[:images]
     
     Rails.logger.debug "=== DEBUG UPDATE PROPERTY ==="
     Rails.logger.debug "Property params (sem imagens): #{attrs.inspect}"
