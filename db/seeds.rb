@@ -1,44 +1,44 @@
-# # db/seeds.rb
-# # Dados de exemplo para o sistema imobiliário Vellmour
+# db/seeds.rb
+# Dados de exemplo para o sistema imobiliário clauss
 
-# # Limpar dados existentes (apenas em desenvolvimento)
-# if Rails.env.development?
-#   puts "🧹 Limpando dados existentes..."
-#   Property.destroy_all
-#   Neighborhood.destroy_all
-#   User.destroy_all
-# end
+# Limpar dados existentes (apenas em desenvolvimento)
+if Rails.env.development?
+  puts "🧹 Limpando dados existentes..."
+  Property.destroy_all
+  Neighborhood.destroy_all
+  User.destroy_all
+end
 
-# # Criar usuário administrador
-# puts "👤 Criando usuário administrador..."
-# admin = User.find_or_create_by(email: 'bercht@live.com') do |user|
-#   user.password = '12345678'
-#   user.password_confirmation = '12345678'
-# end
+# Criar usuário administrador
+puts "👤 Criando usuário administrador..."
+admin = User.find_or_create_by(email: 'bercht@live.com') do |user|
+  user.password = '12345678'
+  user.password_confirmation = '12345678'
+end
 
-# puts "✅ Usuário criado: #{admin.email}"
+puts "✅ Usuário criado: #{admin.email}"
 
-# # Criar bairros
-# puts "🏘️ Criando bairros..."
-# neighborhoods = [
-#   'Centro',
-#   'Copacabana',
-#   'Ipanema',
-#   'Leblon',
-#   'Botafogo',
-#   'Flamengo',
-#   'Tijuca',
-#   'Barra da Tijuca'
-# ]
+# Criar bairros
+puts "🏘️ Criando bairros..."
+neighborhoods = [
+  'Centro',
+  'Copacabana',
+  'Ipanema',
+  'Leblon',
+  'Botafogo',
+  'Flamengo',
+  'Tijuca',
+  'Barra da Tijuca'
+]
 
-# neighborhoods.each do |name|
-#   Neighborhood.find_or_create_by(name: name)
-# end
+neighborhoods.each do |name|
+  Neighborhood.find_or_create_by(name: name)
+end
 
-# puts "✅ #{Neighborhood.count} bairros criados"
+puts "✅ #{Neighborhood.count} bairros criados"
 
-# # Criar propriedades de exemplo
-# puts "🏠 Criando propriedades de exemplo..."
+# Criar propriedades de exemplo
+puts "🏠 Criando propriedades de exemplo..."
 
 
 descriptions = [
@@ -78,7 +78,7 @@ puts "   - Imóveis: #{Property.count}"
 puts "   - Imóveis em destaque: #{Property.where(featured: true).count}"
 puts ""
 puts "🔑 Login do admin:"
-puts "   Email: admin@vellmour.com"
+puts "   Email: admin@clauss.com"
 puts "   Senha: password123"
 puts ""
 puts "🌐 Acesse: http://localhost:3000/admin"

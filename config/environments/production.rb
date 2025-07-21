@@ -29,8 +29,8 @@ Rails.application.configure do
   end
   
   # Configurações de produção
-  config.action_mailer.default_url_options = { host: 'vellmour-app-802a26ce0f21.herokuapp.com' }
-  config.action_controller.default_url_options = { host: 'vellmour-app-802a26ce0f21.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'https://clauss-app-9ac7561c4758.herokuapp.com' }
+  config.action_controller.default_url_options = { host: 'https://clauss-app-9ac7561c4758.herokuapp.com' }
   config.active_storage.service = :amazon
   config.active_storage.variant_processor = :mini_magick
   config.force_ssl = true
