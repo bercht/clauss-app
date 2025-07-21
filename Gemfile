@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 ruby "3.3.7"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.2.2", ">= 7.2.2.1"
+gem "rails", "~> 8.0.2"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 # Use postgresql as the database for Active Record
@@ -66,7 +66,7 @@ gem "tailwindcss-rails", "~> 4.3"
 
 gem "devise", "~> 4.9"
 gem "devise-i18n"
-gem "rails-i18n", "~> 7.0.0"
+gem "rails-i18n", "~> 8.0.1"
 gem "aws-sdk-s3", "~> 1.192"
 gem "image_processing", "~> 1.2"
 gem "friendly_id", "~> 5.4"
