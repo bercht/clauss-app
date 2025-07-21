@@ -74,14 +74,14 @@
             </div>
           </div>
 
-          <!-- Bairro -->
+          <!-- Praia -->
           <div class="sm:col-span-3">
             <label for="neighborhood" class="block text-sm/6 font-medium text-gray-900">
-              Bairro
+              Praia
             </label>
             <div class="mt-2 grid grid-cols-1">
               <%= f.select :neighborhood_id_eq, 
-                  options_for_select([['Todos os bairros', '']] + @neighborhoods.map { |n| [n.name, n.id] }, params.dig(:q, :neighborhood_id_eq)),
+                  options_for_select([['Todas as praias', '']] + @neighborhoods.map { |n| [n.name, n.id] }, params.dig(:q, :neighborhood_id_eq)),
                   {}, 
                   { id: "neighborhood", class: "col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" } %>
               <svg class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">

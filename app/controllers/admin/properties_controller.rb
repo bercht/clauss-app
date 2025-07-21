@@ -7,7 +7,7 @@ class Admin::PropertiesController < Admin::BaseController
   end
 
   def show
-    # Carregar imóveis relacionados do mesmo bairro (excluindo o atual)
+    # Carregar imóveis relacionados da mesma praia (excluindo o atual)
     @related_properties = @property.neighborhood
                                   .properties
                                   .where.not(id: @property.id)

@@ -19,7 +19,7 @@ class Admin::NeighborhoodsController < Admin::BaseController
     @neighborhood = Neighborhood.new(neighborhood_params)
     
     if @neighborhood.save
-      redirect_to admin_neighborhoods_path, notice: 'Bairro criado com sucesso.'
+      redirect_to admin_neighborhoods_path, notice: 'Praia criada com sucesso.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -30,7 +30,7 @@ class Admin::NeighborhoodsController < Admin::BaseController
 
   def update
     if @neighborhood.update(neighborhood_params)
-      redirect_to admin_neighborhoods_path, notice: 'Bairro atualizado com sucesso.'
+      redirect_to admin_neighborhoods_path, notice: 'Praia atualizada com sucesso.'
     else
       render :edit, status: :unprocessable_entity
     end
@@ -38,7 +38,7 @@ class Admin::NeighborhoodsController < Admin::BaseController
 
   def destroy
     @neighborhood.destroy
-    redirect_to admin_neighborhoods_path, notice: 'Bairro deletado com sucesso.'
+    redirect_to admin_neighborhoods_path, notice: 'Praia deletada com sucesso.'
   end
 
   private

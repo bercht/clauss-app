@@ -40,8 +40,8 @@
         <!-- Logo -->
         <div class="flex shrink-0 items-center">
           <%= link_to root_path, class: "flex items-center" do %>
-            <%= image_tag "logo_vellmour_white.png", 
-                alt: "Vellmour", 
+            <%= image_tag "logowhite.png", 
+                alt: "Clauss", 
                 class: "h-10 w-auto" %>
           <% end %>
         </div>
@@ -52,11 +52,11 @@
             <%= link_to "Imóveis", properties_path, 
                 class: "rounded-md px-3 py-2 text-sm font-medium #{'bg-gray-900 text-white' if current_page?(properties_path)} #{'text-gray-300 hover:bg-gray-700 hover:text-white' unless current_page?(properties_path)}" %>
             
-            <!-- Dropdown de Bairros -->
+            <!-- Dropdown de Praias -->
             <div class="relative group">
               <button type="button" 
                       class="flex items-center rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
-                <span>Bairros</span>
+                <span>Praias</span>
                 <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
@@ -138,8 +138,8 @@
       <%= link_to "Imóveis", properties_path, 
           class: "block rounded-md px-3 py-2 text-base font-medium #{'bg-gray-900 text-white' if current_page?(properties_path)} #{'text-gray-300 hover:bg-gray-700 hover:text-white' unless current_page?(properties_path)}" %>
       
-      <!-- Bairros no Mobile -->
-      <div class="text-gray-400 px-3 py-2 text-base font-medium">Bairros:</div>
+      <!-- Praias no Mobile -->
+      <div class="text-gray-400 px-3 py-2 text-base font-medium">Praias:</div>
       <% Neighborhood.all.each do |neighborhood| %>
         <%= link_to neighborhood.name, neighborhood_path(neighborhood), 
             class: "block rounded-md px-6 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white" %>

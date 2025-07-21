@@ -183,9 +183,9 @@
                 </div>
               </div>
 
-              <!-- Bairro -->
+              <!-- praia -->
               <div class="col-span-full">
-                <%= form.label :neighborhood_id, "Bairro", class: "block text-sm font-medium text-white" %>
+                <%= form.label :neighborhood_id, "Praia", class: "block text-sm font-medium text-white" %>
                 <div class="mt-2">
                   <%= form.select :neighborhood_id, 
                       options_for_select(@neighborhoods.map { |n| [n.name, n.id] }, @property.neighborhood_id),

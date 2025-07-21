@@ -18,24 +18,21 @@ end
 
 puts "✅ Usuário criado: #{admin.email}"
 
-# Criar bairros
-puts "🏘️ Criando bairros..."
+# Criar Praias
+puts "🏘️ Criando Praias..."
 neighborhoods = [
-  'Centro',
-  'Copacabana',
-  'Ipanema',
-  'Leblon',
-  'Botafogo',
-  'Flamengo',
-  'Tijuca',
-  'Barra da Tijuca'
+  'Capão da Canoa',
+  'Xangri-lá',
+  'Imbé',
+  'Atlântida',
+  'Tramandaí'
 ]
 
 neighborhoods.each do |name|
   Neighborhood.find_or_create_by(name: name)
 end
 
-puts "✅ #{Neighborhood.count} bairros criados"
+puts "✅ #{Neighborhood.count} Praias criados"
 
 # Criar propriedades de exemplo
 puts "🏠 Criando propriedades de exemplo..."
@@ -73,7 +70,7 @@ end
 puts "🎉 Seeds executados com sucesso!"
 puts "📊 Estatísticas:"
 puts "   - Usuários: #{User.count}"
-puts "   - Bairros: #{Neighborhood.count}"
+puts "   - Praias: #{Neighborhood.count}"
 puts "   - Imóveis: #{Property.count}"
 puts "   - Imóveis em destaque: #{Property.where(featured: true).count}"
 puts ""
